@@ -5,57 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hamachi the Psychotic Killer</title>
   <link rel="icon" type="image/x-icon" href="https://gavinoriley.github.io/assets/hamafavi.ico">
+  <link rel="preload" href="/assets/FSEX300.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     @font-face {
       font-family: 'FSEX300';
-      src: url('https://gavinoriley.github.io/assets/FSEX300.woff2') format('woff2'),
-           url('https://gavinoriley.github.io/assets/FSEX300.woff') format('woff'),
-           url('https://gavinoriley.github.io/assets/FSEX300.ttf') format('truetype');
+      src: url('/assets/FSEX300.woff2') format('woff2'),
+           url('/assets/FSEX300.woff') format('woff'),
+           url('/assets/FSEX300.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'FSEX300', sans-serif;
+      font-family: 'FSEX300', Arial, sans-serif;
       cursor: url('https://gavinoriley.github.io/assets/sprCursor_3.png'), auto;
     }
 
     body {
-      background: url('https://gavinoriley.github.io/assets/blankhamachi_hero.png') no-repeat center top fixed;
-      background-size: cover;
+      background: #000;
       color: #fff;
       position: relative;
       overflow-x: hidden;
-      padding-top: 60px; /* Space for the fixed nav bar */
-    }
-
-    /* Gradient Overlay */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 1) 80%);
-      z-index: -1;
-    }
-
-    /* Parallax Effect */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://gavinoriley.github.io/assets/blankhamachi_hero.png') no-repeat center top;
-      background-size: cover;
-      z-index: -2;
-      transform: translateZ(0);
+      padding-top: 80px; /* Adjusted for larger navbar */
     }
 
     .navbar {
@@ -63,24 +38,24 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: #333; /* Updated to match Buy Now page */
-      padding: 10px 0; /* Updated to match Buy Now page */
-      display: flex; /* Updated to match Buy Now page */
-      justify-content: center; /* Updated to match Buy Now page */
-      gap: 40px; /* Updated to match Buy Now page */
-      z-index: 100; /* Updated to match Buy Now page */
+      background-color: #333;
+      padding: 15px 0; /* Increased padding for taller navbar */
+      display: flex;
+      justify-content: center;
+      gap: 50px; /* Increased gap for better spacing */
+      z-index: 100;
     }
 
     .navbar a {
-      color: white; /* Kept same */
-      text-decoration: none; /* Kept same */
-      font-size: 18px; /* Updated to match Buy Now page */
-      text-shadow: 1px 1px 2px black; /* Updated to match Buy Now page */
-      cursor: url('https://gavinoriley.github.io/assets/sprCursor_3.png'), auto; /* Added to match Buy Now page */
+      color: white;
+      text-decoration: none;
+      font-size: 22px; /* Increased font size */
+      text-shadow: 1px 1px 2px black;
+      cursor: url('https://gavinoriley.github.io/assets/sprCursor_3.png'), auto;
     }
 
     .navbar a:hover {
-      text-decoration: underline; /* Updated to match Buy Now page */
+      text-decoration: underline;
     }
 
     .logo-section {
@@ -92,7 +67,7 @@
     .logo-section img {
       max-width: 1000px;
       width: 100%;
-      margin-bottom: 40px;
+      margin-bottom: 40 fréquent;
     }
 
     .buttons {
@@ -136,18 +111,28 @@
     }
 
     .video-wrapper {
-      flex: 0 0 60%;
+      flex: 0 0 70%;
       text-align: center;
     }
 
-    .video-wrapper iframe {
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 600px;
+      height: 100%;
       border: none;
     }
 
     .character-left, .character-right {
-      flex: 0 0 20%;
+      flex: 0 0 15%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -228,18 +213,19 @@
 <body>
   <nav class="navbar">
     <a href="https://hamachithepsychotickiller.com">HOME</a>
-    <a href="https://store.steampowered.com/news/app/3355690/view/520837042930712593">READ DEVLOG</a>
     <a href="https://hamachithepsychotickiller.com/about/">ABOUT</a>
+    <a href="https://store.steampowered.com/news/app/3355690/view/520837042930712593" target="_blank">READ DEVLOG</a>
     <a href="https://hamachithepsychotickiller.com/buynow/">BUY NOW</a>
+    <a href="https://hamachithepsychotickiller.com/badguy/">BAD GUY?</a>
+    <a href="https://itch.io/embed-upload/13425866?color=333333" target="_blank">PLAY IN BROWSER</a>
   </nav>
 
   <div class="logo-section">
     <img src="https://gavinoriley.github.io/assets/Z4ow1Dt.png" alt="Hamachi Logo">
     <div class="buttons">
       <a href="https://hamachithepsychotickiller.com/buynow/"><img src="https://gavinoriley.github.io/assets/4buynow.png" alt="Buy Now"></a>
-      <a href="https://store.steampowered.com/news/app/3355690/view/520837042930712593"><img src="https://gavinoriley.github.io/assets/2devlogbutton.png" alt="Devlog"></a>
+      <a href="https://store.steampowered.com/news/app/3355690/view/520837042930712593" target="_blank"><img src="https://gavinoriley.github.io/assets/2devlogbutton.png" alt="Devlog"></a>
     </div>
-    <a class="play-link" href="https://itch.io/embed-upload/13425866?color=333333" target="_blank">Play Hamachi in Browser</a>
   </div>
 
   <div class="video-section">
@@ -247,7 +233,9 @@
       <img src="https://gavinoriley.github.io/assets/demon.png" alt="Demon Character">
     </div>
     <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/ltfQsrxRSUw?si=JsxZSltJGaohMLIy" allowfullscreen></iframe>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/ltfQsrxRSUw?si=JsxZSltJGaohMLIy" allowfullscreen></iframe>
+      </div>
     </div>
     <div class="character-right">
       <img src="https://gavinoriley.github.io/assets/demon2.png" alt="Demon Character 2">
@@ -255,7 +243,9 @@
   </div>
 
   <p class="description">
-    This is a platformer game where you control Hamachi, a once-ordinary individual now possessed by a demon. Driven by the demon's influence, Hamachi must slaughter innocent civilians, evade the police, and fuel the demon's power through bloodshed. As the demon grows stronger, it aims to fully dominate Hamachi's mind and use him to conquer the world.
+    This is a platformer game where you control Hamachi, a once-ordinary individual who has been possessed by a demon. Driven by the demon's influence, Hamachi must slaughter innocent civilians, evade the police, and fuel the demon's power through bloodshed. As the demon grows stronger, it aims to fully dominate Hamachi's mind and use him to conquer
+
+ the world.
   </p>
 
   <div class="footer">
@@ -274,12 +264,6 @@
   <a href="#" class="back-to-top"><img src="https://gavinoriley.github.io/assets/sprnose.png" alt="Back to Top"></a>
 
   <script>
-    // Parallax Effect
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      document.body.style.backgroundPositionY = `${scrollY * 0.5}px`;
-    });
-
     // Back to Top Button Scroll Effect
     const backToTop = document.querySelector('.back-to-top');
     window.addEventListener('scroll', () => {
