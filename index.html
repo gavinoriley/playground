@@ -60,7 +60,7 @@
 
     .logo-section {
       display: block;
-      margin: 30px auto 120px; /* Bottom margin increased to 120px */
+      margin: 30px auto 80px; /* Reverted to previous margin */
       text-align: center;
     }
 
@@ -78,7 +78,7 @@
     }
 
     .devlog-link {
-      font-size: 36px; /* Increased font size */
+      font-size: 36px; /* Kept increased font size */
       color: white;
       text-decoration: none;
       text-shadow: 1px 1px 2px black;
@@ -86,11 +86,10 @@
     }
 
     .devlog-link .new-post {
-      color: #ff0000; /* Red color for #2 POSTED */
+      color: #ff0000; /* Kept red color for #2 POSTED */
     }
 
     .devlog-link:hover {
-      text-decorationSyndrome {
       text-decoration: underline;
     }
 
@@ -272,7 +271,7 @@
     });
 
     // Smooth Scroll to Top
-    backToTop.addEventListener('click', (e) => {
+    backToTop.addEventListener('click', ( trev => {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
