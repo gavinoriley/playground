@@ -47,7 +47,7 @@
     }
 
     .navbar a {
-      color: white;
+      color: #ccc;
       text-decoration: none;
       font-size: 22px;
       text-shadow: 1px 1px 2px black;
@@ -55,7 +55,7 @@
     }
 
     .navbar a:hover {
-      text-decoration: underline;
+      color: #fff; /* White on hover, no underline */
     }
 
     .logo-section {
@@ -79,18 +79,22 @@
 
     .devlog-link {
       font-size: 36px;
-      color: white;
+      color: #ccc;
       text-decoration: none;
       text-shadow: 1px 1px 2px black;
       text-transform: uppercase;
     }
 
     .devlog-link .new-post {
-      color: #ff0000;
+      color: #ff0000; /* Red text for #2 POSTED */
     }
 
     .devlog-link:hover {
-      text-decoration: underline;
+      color: #fff; /* White on hover, no underline */
+    }
+
+    .devlog-link:hover .new-post {
+      color: #fff; /* White on hover */
     }
 
     .video-section {
@@ -170,24 +174,12 @@
     .social-links a {
       font-size: 16px;
       color: #ccc;
-      text-decoration    .social-links a:hover {
-      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
     }
 
-    .back-to-top {
-      position: fixed;
-      bottom: -300px;
-      right: 20px;
-      transition: bottom 0.3s ease;
-      z-index: 1000;
-    }
-
-    .back-to-top img {
-      /* Original size retained */
-    }
-
-    .back-to-top.visible {
-      bottom: 20px;
+    .social-links a:hover {
+      color: #fff; /* White on hover, no underline */
     }
   </style>
 </head>
@@ -234,31 +226,5 @@
       <a href="mailto:img.oriley@gmail.com">Contact</a>
     </div>
   </div>
-
-  <a href="#" class="back-to-top"><img src="https://gavinoriley.github.io/assets/sprnose.png" alt="Back to Top"></a>
-
-  <script>
-    // Back to Top Button Scroll Effect
-    const backToTop = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', () => {
-      const scrollHeight = document.documentElement.scrollHeight;
-      const clientHeight = document.documentElement.clientHeight;
-      const scrollTop = window.scrollY;
-      const maxScroll = scrollHeight - clientHeight;
-      const scrollPercent = scrollTop / maxScroll;
-
-      if (scrollPercent > 0.8) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    });
-
-    // Smooth Scroll to Top
-    backToTop.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
 </body>
 </html>
