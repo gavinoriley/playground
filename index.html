@@ -60,7 +60,7 @@
 
     .logo-section {
       display: block;
-      margin: 30px auto 80px; /* Reverted to previous margin */
+      margin: 30px auto 80px;
       text-align: center;
     }
 
@@ -78,7 +78,7 @@
     }
 
     .devlog-link {
-      font-size: 36px; /* Kept increased font size */
+      font-size: 36px;
       color: white;
       text-decoration: none;
       text-shadow: 1px 1px 2px black;
@@ -86,7 +86,7 @@
     }
 
     .devlog-link .new-post {
-      color: #ff0000; /* Kept red color for #2 POSTED */
+      color: #ff0000;
     }
 
     .devlog-link:hover {
@@ -135,14 +135,6 @@
       max-width: 100%;
     }
 
-    .description {
-      font-size: 16px;
-      margin: 20px auto;
-      text-align: center;
-      color: #ccc;
-      max-width: 800px;
-    }
-
     .footer {
       text-align: center;
       margin: 60px 0 40px;
@@ -178,11 +170,7 @@
     .social-links a {
       font-size: 16px;
       color: #ccc;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    .social-links a:hover {
+      text-decoration    .social-links a:hover {
       color: #fff;
     }
 
@@ -234,10 +222,6 @@
     </div>
   </div>
 
-  <p class="description">
-    This is a platformer game where you control Hamachi, a once-ordinary individual who has been possessed by a demon. Driven by the demon's influence, Hamachi must slaughter innocent civilians, evade the police, and fuel the demon's power through bloodshed. As the demon grows stronger, it aims to fully dominate Hamachi's mind and use him to conquer the world.
-  </p>
-
   <div class="footer">
     <img src="https://gavinoriley.github.io/assets/3dspin.gif" alt="Branding Logo">
     <p class="location">based in los angeles</p>
@@ -271,7 +255,7 @@
     });
 
     // Smooth Scroll to Top
-    backToTop.addEventListener('click', ( trev => {
+    backToTop.addEventListener('click', (e) => {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
