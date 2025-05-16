@@ -57,12 +57,15 @@
       color: #fff;
     }
 
-    /* New styles for the sections */
+    /* Updated styles for the sections */
     section {
+      width: 100vw; /* Full viewport width */
+      min-height: 400px; /* Minimum height to ensure visibility */
       padding: 20px;
-      margin: 20px auto;
-      max-width: 800px;
-      min-height: 200px; /* Ensures sections are visible even if empty */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
     }
 
     .title-section {
