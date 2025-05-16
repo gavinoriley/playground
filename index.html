@@ -32,15 +32,12 @@
     body {
       font-family: 'FSEX300', Arial, sans-serif;
       background-color: #f0f0f0;
+      margin: 0;
     }
     .section-title {
       background: url('https://via.placeholder.com/300x50?text=Section+Title') no-repeat center;
       height: 50px;
       text-indent: -9999px;
-    }
-    .swiper-slide img {
-      width: 100%;
-      height: auto;
     }
     .modal {
       display: none;
@@ -84,6 +81,42 @@
     .navbar a:hover {
       color: #fff;
     }
+    #mv {
+      width: 100vw;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    #mv .inner {
+      padding: 0;
+    }
+    #mv .frame img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
+    }
+    #about {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      background-image: url('https://gavinoriley.github.io/assets/unibackground.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #about .inner {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
     @media (max-width: 750px) {
       .section-title {
         background: url('https://via.placeholder.com/200x40?text=Section+Title+SP') no-repeat center;
@@ -97,6 +130,19 @@
       .navbar a {
         font-size: 18px;
       }
+      #mv .frame img {
+        height: auto;
+        aspect-ratio: 2560 / 1440;
+      }
+      #about {
+        height: auto;
+        aspect-ratio: 2560 / 1440;
+        background-size: cover;
+      }
+      #about .inner {
+        padding: 10px;
+        margin: 20px;
+      }
     }
   </style>
 </head>
@@ -108,13 +154,13 @@
     <a href="https://itch.io/embed-upload/13425866?color=333333" target="_blank">PLAY IN BROWSER</a>
   </nav>
 
-  <div id="wrapper" class="max-w-7xl mx-auto pt-20">
-    <main id="container" class="bg-white shadow-lg">
+  <div id="wrapper" class="max-w-full mx-auto pt-20">
+    <main id="container" class="bg-white">
       <!-- Main Visual -->
-      <section id="mv" class="bg-gray-100 py-10">
-        <div class="inner px-4">
+      <section id="mv">
+        <div class="inner">
           <div class="frame">
-            <img src="https://gavinoriley.github.io/assets/HAMAEditBlank.png" alt="Your Game Title Main Visual" class="w-full">
+            <img src="https://gavinoriley.github.io/assets/HAMAEditBlank.png" alt="Your Game Title Main Visual">
           </div>
         </div>
         <div class="bg-gray-200 py-6">
@@ -144,7 +190,7 @@
       </section>
 
       <!-- About the Game -->
-      <section id="about" class="py-10">
+      <section id="about">
         <h2 class="section-title">About the Game</h2>
         <div class="inner px-4 max-w-5xl mx-auto">
           <p class="text-lg mb-6">
@@ -161,28 +207,8 @@
       <!-- Story -->
       <section id="story" class="py-10 bg-gray-50">
         <h2 class="section-title">Story</h2>
-        <p class="text-lg text-center mb-6 px-4">
-          In the peaceful land of Dreamscape, the Mystic Orbs are stolen by the Dark Lord. Your Character embarks on a journey to retrieve them and restore harmony.
-        </p>
         <div class="inner px-4 max-w-5xl mx-auto">
-          <div id="storySwiper" class="relative">
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="https://via.placeholder.com/600x400?text=Story+Scene+1" alt="The peaceful Dreamscape">
-                </div>
-                <div class="swiper-slide">
-                  <img src="https://via.placeholder.com/600x400?text=Story+Scene+2" alt="Dark Lord’s theft">
-                </div>
-                <div class="swiper-slide">
-                  <img src="https://via.placeholder.com/600x400?text=Story+Scene+3" alt="Your Character’s journey">
-                </div>
-              </div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
+          <!-- Empty as per previous request -->
         </div>
       </section>
 
@@ -255,31 +281,14 @@
       <div id="playable-modal" class="modal">
         <div class="modal-content">
           <button id="modal-close" class="float-right">Close</button>
-          <h3 class="text-2xl mb-4">
-
-Playable Consoles</h3>
+          <h3 class="text-2xl mb-4">Playable Consoles</h3>
           <p>Retro Console, Modern Console, Handheld Device</p>
         </div>
       </div>
     </main>
   </div>
 
-  <!-- Swiper JS for sliders -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script>
-    // Initialize Swiper
-    const storySwiper = new Swiper('#storySwiper .swiper-container', {
-      loop: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
-
     // Modal functionality
     const consoleBtn = document.getElementById('console-btn');
     const modal = document.getElementById('playable-modal');
