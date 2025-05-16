@@ -3,36 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hamachi the Psychotic Killer</title>
+  <meta name="description" content="Official page for Your Game Title, an exciting action game for retro consoles. Master unique abilities and embark on an epic adventure!">
+  <meta name="keywords" content="Your Game Title, action game, retro gaming, console">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Your Game Title | Retro Console">
+  <meta property="og:description" content="Official page for Your Game Title, an exciting action game for retro consoles.">
+  <meta property="og:url" content="https://yourgamewebsite.com">
+  <meta property="og:image" content="https://yourgamewebsite.com/assets/img/main-visual.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your Game Title | Retro Console">
+  <meta name="twitter:description" content="Official page for Your Game Title, an exciting action game for retro consoles.">
+  <meta name="twitter:image" content="https://yourgamewebsite.com/assets/img/main-visual.png">
+  <title>Your Game Title | Retro Console</title>
   <link rel="icon" type="image/x-icon" href="https://gavinoriley.github.io/assets/hamafavi.ico">
-  <link rel="preload" href="/assets/FSEX300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://gavinoriley.github.io/assets/FSEX300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <style>
     @font-face {
       font-family: 'FSEX300';
-      src: url('/assets/FSEX300.woff2') format('woff2'),
-           url('/assets/FSEX300.woff') format('woff'),
-           url('/assets/FSEX300.ttf') format('truetype');
+      src: url('https://gavinoriley.github.io/assets/FSEX300.woff2') format('woff2'),
+           url('https://gavinoriley.github.io/assets/FSEX300.woff') format('woff'),
+           url('https://gavinoriley.github.io/assets/FSEX300.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'FSEX300', Arial, sans-serif;
-      cursor: url('https://gavinoriley.github.io/assets/sprCursor_3.png'), auto;
-    }
-
     body {
-      background: #fff;
-      color: #000;
-      position: relative;
-      overflow-x: hidden;
-      padding-top: 80px;
+      font-family: 'FSEX300', Arial, sans-serif;
+      background-color: #f0f0f0;
     }
-
+    .section-title {
+      background: url('https://via.placeholder.com/300x50?text=Section+Title') no-repeat center;
+      height: 50px;
+      text-indent: -9999px;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+    .modal-content {
+      background: white;
+      margin: 10% auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 8px;
+    }
+    .modal.active {
+      display: block;
+    }
     .navbar {
       position: fixed;
       top: 0;
@@ -45,20 +75,32 @@
       gap: 60px;
       z-index: 100;
     }
-
     .navbar a {
       color: #ccc;
       text-decoration: none;
       font-size: 24px;
       text-shadow: 1px 1px 2px black;
     }
-
     .navbar a:hover {
       color: #fff;
     }
+    @media (max-width: 750px) {
+      .section-title {
+        background: url('https://via.placeholder.com/200x40?text=Section+Title+SP') no-repeat center;
+        height: 40px;
+      }
+      .navbar {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .navbar a {
+        font-size: 18px;
+      }
+    }
   </style>
 </head>
-<body>
+<body class="text-gray-800">
   <nav class="navbar">
     <a href="https://hamachithepsychotickiller.com/about/">ABOUT</a>
     <a href="#">DEMO</a>
@@ -66,13 +108,190 @@
     <a href="https://itch.io/embed-upload/13425866?color=333333" target="_blank">PLAY IN BROWSER</a>
   </nav>
 
-  <div id="wrapper">
-    <main id="container">
-      <!-- Content will go here -->
+  <div id="wrapper" class="max-w-7xl mx-auto pt-20">
+    <main id="container" class="bg-white shadow-lg">
+      <!-- Main Visual -->
+      <section id="mv" class="bg-gray-100 py-10">
+        <div class="inner px-4">
+          <div class="frame">
+            <img src="https://gavinoriley.github.io/assets/HAMAEditBlank.png" alt="Your Game Title Main Visual" class="w-full">
+          </div>
+        </div>
+        <div class="bg-gray-200 py-6">
+          <div class="inner px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+              <div class="title">
+                <h1 class="text-3xl font-bold mb-2">
+                  <img src="https://via.placeholder.com/300x50?text=Your+Game+Title" alt="Your Game Title">
+                </h1>
+                <div class="text-lg">
+                  <img src="https://via.placeholder.com/500x30?text=Master+abilities+to+save+the+world!" alt="Game Tagline">
+                </div>
+              </div>
+              <div class="saledate mt-4 md:mt-0">
+                <div class="flex items-center mb-2">
+                  <h3 class="mr-2">Release Date:</h3>
+                  <span>January 15, 1995</span>
+                </div>
+                <div class="flex items-center">
+                  <h3 class="mr-2">Playable On:</h3>
+                  <button id="console-btn" class="underline">Retro Console</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About the Game -->
+      <section id="about" class="py-10">
+        <h2 class="section-title">About the Game</h2>
+        <div class="inner px-4 max-w-5xl mx-auto">
+          <p class="text-lg mb-6">
+            Your Game Title is a 1995 action game for the Retro Console. Join Your Character on a quest to restore peace by collecting the Mystic Orbs. Use unique abilities like Fire, Ice, and Thunder to overcome challenges!
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <img src="https://via.placeholder.com/400x300?text=Screenshot+1" alt="Screenshot 1">
+            <img src="https://via.placeholder.com/400x300?text=Screenshot+2" alt="Screenshot 2">
+            <img src="https://via.placeholder.com/400x300?text=Screenshot+3" alt="Screenshot 3">
+          </div>
+        </div>
+      </section>
+
+      <!-- Story -->
+      <section id="story" class="py-10 bg-gray-50">
+        <h2 class="section-title">Story</h2>
+        <p class="text-lg text-center mb-6 px-4">
+          In the peaceful land of Dreamscape, the Mystic Orbs are stolen by the Dark Lord. Your Character embarks on a journey to retrieve them and restore harmony.
+        </p>
+        <div class="inner px-4 max-w-5xl mx-auto">
+          <div id="storySwiper" class="relative">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="https://via.placeholder.com/600x400?text=Story+Scene+1" alt="The peaceful Dreamscape">
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://via.placeholder.com/600x400?text=Story+Scene+2" alt="Dark Lord’s theft">
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://via.placeholder.com/600x400?text=Story+Scene+3" alt="Your Character’s journey">
+                </div>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How to Play -->
+      <section id="howto" class="py-10">
+        <h2 class="section-title">How to Play</h2>
+        <div class="inner px-4 max-w-5xl mx-auto">
+          <h3 class="text-2xl font-semibold mb-4">Abilities</h3>
+          <p class="mb-4">
+            Absorb enemies to gain abilities like Fire (burn enemies), Ice (freeze obstacles), and Thunder (electrify foes).
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+            <div>
+              <img src="https://via.placeholder.com/200x150?text=Fire+Ability" alt="Fire Ability">
+              <p>Fire: Burn enemies</p>
+            </div>
+            <div>
+              <img src="https://via.placeholder.com/200x150?text=Ice+Ability" alt="Ice Ability">
+              <p>Ice: Freeze obstacles</p>
+            </div>
+            <div>
+              <img src="https://via.placeholder.com/200x150?text=Thunder+Ability" alt="Thunder Ability">
+              <p>Thunder: Electrify foes</p>
+            </div>
+            <div>
+              <img src="https://via.placeholder.com/200x150?text=More+Abilities" alt="More Abilities">
+              <p>Discover more!</p>
+            </div>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">Controls</h3>
+          <p class="mb-4">
+            Use the D-Pad to move, A to jump, B to attack or absorb, and combine buttons for special moves.
+          </p>
+          <img src="https://via.placeholder.com/400x200?text=Controller+Layout" alt="Controller Layout" class="mx-auto">
+        </div>
+      </section>
+
+      <!-- Items -->
+      <section id="item" class="py-10 bg-gray-50">
+        <h2 class="section-title">Items</h2>
+        <p class="text-lg text-center mb-6 px-4">
+          Collect items to aid Your Character’s adventure.
+        </p>
+        <div class="inner px-4 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <img src="https://via.placeholder.com/200x150?text=Health+Orb" alt="Health Orb">
+            <p>Health Orb: Restores full health.</p>
+          </div>
+          <div>
+            <img src="https://via.placeholder.com/200x150?text=Power+Star" alt="Power Star">
+            <p>Power Star: Grants temporary invincibility.</p>
+          </div>
+          <div>
+            <img src="https://via.placeholder.com/200x150?text=1UP" alt="1UP">
+            <p>1UP: Adds an extra life.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <section id="footer-contents" class="py-6 bg-gray-800 text-white text-center">
+        <p class="mb-2">© 2025 Your Company. All rights reserved.</p>
+        <div class="flex justify-center space-x-4">
+          <a href="#" class="underline">Home</a>
+          <a href="#" class="underline">Top</a>
+        </div>
+      </section>
+
+      <!-- Playable Console Modal -->
+      <div id="playable-modal" class="modal">
+        <div class="modal-content">
+          <button id="modal-close" class="float-right">Close</button>
+          <h3 class="text-2xl mb-4">
+
+Playable Consoles</h3>
+          <p>Retro Console, Modern Console, Handheld Device</p>
+        </div>
+      </div>
     </main>
-    <footer id="footer-contents">
-      <!-- Footer content will go here -->
-    </footer>
   </div>
+
+  <!-- Swiper JS for sliders -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    // Initialize Swiper
+    const storySwiper = new Swiper('#storySwiper .swiper-container', {
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
+    // Modal functionality
+    const consoleBtn = document.getElementById('console-btn');
+    const modal = document.getElementById('playable-modal');
+    const modalClose = document.getElementById('modal-close');
+
+    consoleBtn.addEventListener('click', () => {
+      modal.classList.add('active');
+    });
+
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+  </script>
 </body>
 </html>
