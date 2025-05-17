@@ -101,7 +101,19 @@
       transform: translateX(-50%);
       text-align: center;
       color: #D4A017;
-      font-size: 50px; /* Changed to make text smaller */
+      font-size: 50px;
+      z-index: 1;
+      margin: 0;
+    }
+
+    .about-section .additional-info {
+      position: absolute;
+      top: 285px; /* 135px + 150px */
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #FFFFFF; /* White color */
+      font-size: 50px; /* Matches .about-section h2 for consistency */
       z-index: 1;
       margin: 0;
     }
@@ -131,6 +143,7 @@
       <section class="about-section">
         <img src="https://gavinoriley.github.io/assets/AboutICARUSTEST.png" alt="In-game screenshot for About section">
         <h2>- ABOUT THIS GAME -</h2>
+        <h2 class="additional-info">- ABOUT THIS GAME -</h2>
       </section>
     </main>
     <footer id="footer-contents">
