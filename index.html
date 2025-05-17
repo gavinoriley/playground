@@ -77,12 +77,21 @@
       color: #fff; /* White text for better contrast */
       height: auto; /* Let image determine height */
       padding: 0; /* Remove padding to avoid extra space */
+      position: relative; /* Added to contain absolutely positioned h2 */
     }
 
     h2 {
       font-size: 32px;
-      margin: 0px 0; /* Add margin for spacing above/below text */
-      z-index: 0; /* Ensure text is above image */
+      margin: 0; /* Corrected from 0px 0 for proper margin reset */
+      z-index: 0; /* Default z-index */
+    }
+
+    .about-section h2 {
+      position: absolute; /* Position over the image */
+      top: 20px; /* Distance from top */
+      left: 20px; /* Distance from left */
+      z-index: 1; /* Ensure text is above image */
+      margin: 0; /* Reset margins */
     }
 
     .about-section img {
