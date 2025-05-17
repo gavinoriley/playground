@@ -64,7 +64,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      position: relative; /* Contain absolutely positioned image */
+      position: relative; /* Contain content */
     }
 
     .title-section {
@@ -75,24 +75,20 @@
     .about-section {
       background-color: #00008b; /* Dark blue background */
       color: #fff; /* White text for better contrast */
-      height: 2912px; /* Matches image height */
+      height: auto; /* Let image determine height */
+      padding: 0; /* Remove padding to avoid extra space */
     }
 
     h2 {
       font-size: 32px;
-      margin-bottom: 10px;
+      margin: 20px 0; /* Add margin for spacing above/below text */
       z-index: 1; /* Ensure text is above image */
     }
 
     .about-section img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* Show entire image without cropping */
-      object-position: center; /* Center the image */
-      z-index: 0; /* Place image behind text */
+      width: 100vw; /* Full viewport width */
+      height: auto; /* Maintain aspect ratio */
+      display: block; /* Ensure image behaves as block element */
     }
   </style>
 </head>
