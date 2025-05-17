@@ -38,7 +38,7 @@
       left: 0;
       width: 100%;
       background-color: #003087;
-      padding: 20px 0; /* Larger navbar */
+      padding: 20px 0;
       display: flex;
       justify-content: center;
       gap: 60px;
@@ -48,7 +48,7 @@
     .navbar a {
       color: #ccc;
       text-decoration: none;
-      font-size: 30px; /* Larger font size */
+      font-size: 30px;
       text-shadow: 1px 1px 2px black;
     }
 
@@ -57,47 +57,55 @@
     }
 
     section {
-      width: 100vw; /* Full viewport width */
-      min-height: 600px; /* Default height for sections */
+      width: 100vw;
+      min-height: 600px;
       padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      position: relative; /* Contain content */
+      position: relative;
     }
 
     .title-section {
-      background-color: #808080; /* Grey background */
-      padding-top: 100px; /* Adjusted for larger navbar */
+      background-color: #808080;
+      padding: 0;
     }
 
     .about-section {
-      background-color: #00008b; /* Dark blue background */
-      color: #fff; /* White text for better contrast */
-      height: auto; /* Let image determine height */
-      padding: 0; /* Remove padding to avoid extra space */
-      position: relative; /* Added to contain absolutely positioned h2 */
+      background-color: #00008b;
+      color: #fff;
+      height: auto;
+      padding: 0;
     }
 
     h2 {
       font-size: 32px;
-      margin: 0; /* Corrected from 0px 0 for proper margin reset */
-      z-index: 0; /* Default z-index */
+      margin: 0;
+      z-index: 0;
+    }
+
+    .title-section h2 {
+      position: absolute;
+      top: 120px;
+      left: 20px;
+      z-index: 1;
+      margin: 0;
     }
 
     .about-section h2 {
-      position: absolute; /* Position over the image */
-      top: 20px; /* Distance from top */
-      left: 20px; /* Distance from left */
-      z-index: 1; /* Ensure text is above image */
-      margin: 0; /* Reset margins */
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+      margin: 0;
     }
 
+    .title-section img,
     .about-section img {
-      width: 100vw; /* Full viewport width */
-      height: auto; /* Maintain aspect ratio */
-      display: block; /* Ensure image behaves as block element */
+      width: 100vw;
+      height: auto;
+      display: block;
     }
   </style>
 </head>
@@ -112,13 +120,12 @@
   <div id="wrapper">
     <main id="container">
       <section class="title-section">
+        <img src="https://gavinoriley.github.io/assets/TitleImage.png" alt="Title image">
         <h2>Title</h2>
-        <!-- Add content here if needed -->
       </section>
       <section class="about-section">
-        <h2>About</h2>
         <img src="https://gavinoriley.github.io/assets/AboutICARUSTEST.png" alt="In-game screenshot for About section">
-        <!-- Add text content here if needed -->
+        <h2>About</h2>
       </section>
     </main>
     <footer id="footer-contents">
