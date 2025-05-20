@@ -1,208 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hamachi the Psychotic Killer</title>
-  <link rel="icon" type="image/x-icon" href="https://gavinoriley.github.io/assets/hamafavi.ico">
-  <link rel="preload" href="/assets/FSEX300.woff2" as="font" type="font/woff2" crossorigin>
-  <style>
-    @font-face {
-      font-family: 'FSEX300';
-      src: url('/assets/FSEX300.woff2') format('woff2'),
-           url('/assets/FSEX300.woff') format('woff'),
-           url('/assets/FSEX300.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamachi the Psychotic Killer</title>
+    <link rel="icon" type="image/x-icon" href="https://gavinoriley.github.io/assets/hamafavi.ico">
+    <link rel="preload" href="/assets/FSEX300.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        @font-face {
+            font-family: 'FSEX300';
+            src: url('/assets/FSEX300.woff2') format('woff2'),
+                 url('/assets/FSEX300.woff') format('woff'),
+                 url('/assets/FSEX300.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'FSEX300', Arial, sans-serif;
-      cursor: url('https://gavinoriley.github.io/assets/sprCursor_3.png'), auto;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'FSEX300', Arial, sans-serif;
+            cursor: url('https://gavinoriley.github.io/assets/sprCursor_3.png'), auto;
+        }
 
-    body {
-      background: #fff;
-      color: #000;
-      position: relative;
-      overflow-x: hidden;
-    }
+        body {
+            background: #fff;
+            color: #000;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #003087;
-      padding: 20px 0;
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      z-index: 100;
-    }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #003087;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            z-index: 100;
+        }
 
-    .navbar a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 30px;
-      text-shadow: 1px 1px 2px black;
-    }
+        .navbar a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 30px;
+            text-shadow: 1px 1px 2px black;
+        }
 
-    .navbar a:hover {
-      color: #fff;
-    }
+        .navbar a:hover {
+            color: #fff;
+        }
 
-    section {
-      width: 100vw;
-      min-height: 600px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      position: relative;
-    }
+        section {
+            width: 100vw;
+            min-height: 600px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+        }
 
-    .title-section {
-      background-color: #808080;
-      padding: 0;
-      min-height: 0; /* Overrides min-height: 600px to match image height */
-    }
+        .title-section {
+            background-color: #808080;
+            padding: 0;
+            min-height: 0; /* Overrides min-height: 600px to match image height */
+        }
 
-    .about-section {
-      background-color: #00008b;
-      color: #fff;
-      height: auto;
-      padding: 0;
-    }
+        .about-section {
+            background-color: #00008b;
+            color: #fff;
+            height: auto;
+            padding: 0;
+        }
 
-    h2 {
-      font-size: 32px;
-      margin: 0;
-      z-index: 0;
-    }
+        .roadblock-section {
+            background-color: #00008b;
+            color: #fff;
+            height: auto;
+            padding: 0;
+            min-height: 0; /* Overrides min-height: 600px to match image height */
+        }
 
-    .title-section h2 {
-      position: absolute;
-      top: 120px;
-      left: 20px;
-      z-index: 1;
-      margin: 0;
-    }
+        h2 {
+            font-size: 32px;
+            margin: 0;
+            z-index: 0;
+        }
 
-    .about-section h2 {
-      position: absolute;
-      top: 135px;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      color: #FFFFFF;
-      font-size: 50px;
-      white-space: nowrap;
-      z-index: 1;
-      margin: 0;
-    }
+        .title-section h2 {
+            position: absolute;
+            top: 120px;
+            left: 20px;
+            z-index: 1;
+            margin: 0;
+        }
 
-    .about-section .additional-info {
-      position: absolute;
-      top: 225px;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      color: #FFFFFF;
-      font-size: 35px;
-      z-index: 1;
-      margin: 0;
-    }
+        .about-section h2, .roadblock-section h2 {
+            position: absolute;
+            top: 135px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 50px;
+            white-space: nowrap;
+            z-index: 1;
+            margin: 0;
+        }
 
-    .about-section .more-info {
-      position: absolute;
-      top: 280px; /* 225px + 255px */
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      color: #FFFFFF; /* White color */
-      font-size: 35px; /* Matches .additional-info for consistency */
-      z-index: 1;
-      margin: 0;
-    }
+        .about-section .additional-info {
+            position: absolute;
+            top: 225px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 35px;
+            z-index: 1;
+            margin: 0;
+        }
 
-    .about-section .more-info2 {
-      position: absolute;
-      top: 335px; /* 225px + 255px */
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      color: #FFFFFF; /* White color */
-      font-size: 35px; /* Matches .additional-info for consistency */
-      z-index: 1;
-      margin: 0;
-    }
+        .about-section .more-info {
+            position: absolute;
+            top: 280px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 35px;
+            z-index: 1;
+            margin: 0;
+        }
 
-    .about-section .more-info3 {
-      position: absolute;
-      top: 390px; /* 225px + 255px */
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      color: #FFFFFF; /* White color */
-      font-size: 35px; /* Matches .additional-info for consistency */
-      z-index: 1;
-      margin: 0;
-    }
+        .about-section .more-info2 {
+            position: absolute;
+            top: 335px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 35px;
+            z-index: 1;
+            margin: 0;
+        }
 
-    .about-section .more-info4 {
-      position: absolute;
-      top: 445px; /* 225px + 255px */
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      color: #FFFFFF; /* White color */
-      font-size: 35px; /* Matches .additional-info for consistency */
-      z-index: 1;
-      margin: 0;
-    }
+        .about-section .more-info3 {
+            position: absolute;
+            top: 390px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 35px;
+            z-index: 1;
+            margin: 0;
+        }
 
-    .title-section img,
-    .about-section img {
-      width: 100vw;
-      height: auto;
-      display: block;
-    }
-  </style>
+        .about-section .more-info4 {
+            position: absolute;
+            top: 445px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 35px;
+            z-index: 1;
+            margin: 0;
+        }
+
+        .title-section img,
+        .about-section img,
+        .roadblock-section img {
+            width: 100vw;
+            height: auto;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-  <nav class="navbar">
-    <a href="https://hamachithepsychotickiller.com/about/">ABOUT</a>
-    <a href="#">DEMO</a>
-    <a href="https://store.steampowered.com/news/app/3355690/view/520837042930712593" target="_blank">DEVLOG</a>
-    <a href="https://itch.io/embed-upload/13425866?color=333333" target="_blank">PLAY IN BROWSER</a>
-  </nav>
+    <nav class="navbar">
+        <a href="https://hamachithepsychotickiller.com/about/">ABOUT</a>
+        <a href="#">DEMO</a>
+        <a href="https://store.steampowered.com/news/app/3355690/view/520837042930712593" target="_blank">DEVLOG</a>
+        <a href="https://itch.io/embed-upload/13425866?color=333333" target="_blank">PLAY IN BROWSER</a>
+    </nav>
 
-  <div id="wrapper">
-    <main id="container">
-      <section class="title-section">
-        <img src="https://gavinoriley.github.io/assets/MainCap.png" alt="Title image">
-        <h2>Title</h2>
-      </section>
-      <section class="about-section">
-        <img src="https://gavinoriley.github.io/assets/5ABOUTHAMACHI.png" alt="In-game screenshot for About section">
-        <h2>- ABOUT THIS GAME -</h2>
-        <h2 class="additional-info">Hamachi the Psychotic Killer is a platformer game where you can play as the bad guy.</h2>
-        <h2 class="more-info">Warlocks have summoned Demon Queen Deity in their pursuit of domination over Earth.</h2>
-        <h2 class="more-info2">Possessed by the Demon, Hamachi is influenced to exterminate all life with an axe in hand.</h2>
-        <h2 class="more-info3">It's up to you to determine the fate of this world.</h2>
-        <h2 class="more-info4">Pacifist. Neutral. Genocide.</h2>
+    <div id="wrapper">
+        <main id="container">
+            <section class="title-section">
+                <img src="https://gavinoriley.github.io/assets/MainCap.png" alt="Title image">
+                <h2>Title</h2>
+            </section>
 
-      </section>
-    </main>
-    <footer id="footer-contents">
-      <!-- Footer content will go here -->
-    </footer>
-  </div>
+            <section class="roadblock-section">
+                <img src="https://gavinoriley.github.io/assets/BLOCkRESTHAMACHI.png" alt="Roadblock image">
+            </section>
+
+            <section class="about-section">
+                <img src="https://gavinoriley.github.io/assets/5ABOUTHAMACHI.png" alt="In-game screenshot for About section">
+                <h2>- ABOUT THIS GAME -</h2>
+                <h2 class="additional-info">Hamachi the Psychotic Killer is a platformer game where you can play as the bad guy.</h2>
+                <h2 class="more-info">Warlocks have summoned Demon Queen Deity in their pursuit of domination over Earth.</h2>
+                <h2 class="more-info2">Possessed by the Demon, Hamachi is influenced to exterminate all life with an axe in hand.</h2>
+                <h2 class="more-info3">It's up to you to determine the fate of this world.</h2>
+                <h2 class="more-info4">Pacifist. Neutral. Genocide.</h2>
+            </section>
+        </main>
+
+        <footer id="footer-contents">
+            <!-- Footer content will go here -->
+        </footer>
+    </div>
 </body>
 </html>
