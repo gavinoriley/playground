@@ -70,7 +70,7 @@
         .title-section {
             background-color: #808080;
             padding: 0;
-            min-height: 0; /* Overrides min-height: 600px to match image height */
+            min-height: 0; /* Overrides min-height: 600px to match content height */
         }
 
         .about-section {
@@ -182,11 +182,39 @@
             height: auto;
             display: block;
         }
+
+        /* Carousel Styles */
+        .carousel {
+            width: 100vw;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-inner {
+            display: flex;
+            animation: scroll 20s linear infinite;
+        }
+
+        .carousel-inner img {
+            width: 33.33vw;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-33.33vw);
+            }
+        }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <a href="https://hamachithepsychotickiller.com/about/">ABOUT2</a>
+        <a href="https://hamachithepsychotickiller.com/about/">ABOUT</a>
         <a href="#">DEMO</a>
         <a href="https://store.steampowered.com/news/app/3355690/view/520837042930712593" target="_blank">DEVLOG</a>
         <a href="https://itch.io/embed-upload/13425866?color=333333" target="_blank">PLAY IN BROWSER</a>
@@ -197,6 +225,14 @@
             <section class="title-section">
                 <img src="https://gavinoriley.github.io/assets/MainCap.png" alt="Title image">
                 <h2>Title</h2>
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <img src="https://gavinoriley.github.io/assets/chainsaw.png" alt="Game image">
+                        <img src="https://gavinoriley.github.io/assets/chainsaw.png" alt="Game image">
+                        <img src="https://gavinoriley.github.io/assets/chainsaw.png" alt="Game image">
+                        <img src="https://gavinoriley.github.io/assets/chainsaw.png" alt="Game image">
+                    </div>
+                </div>
             </section>
 
             <section class="roadblock-section">
