@@ -102,7 +102,20 @@
             margin: 0;
         }
 
-        .about-section h2, .roadblock-section h2 {
+        .about-section h2 {
+            position: absolute;
+            top: 135px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #FF0000; /* Changed to red for "- ABOUT THIS GAME -" */
+            font-size: 50px;
+            white-space: nowrap;
+            z-index: 1;
+            margin: 0;
+        }
+
+        .roadblock-section h2 {
             position: absolute;
             top: 135px;
             left: 50%;
@@ -253,7 +266,7 @@
 
             <section class="about-section">
                 <img src="https://gavinoriley.github.io/assets/6ABOUTHAMACHI.png" alt="In-game screenshot for About section">
-                <h2>- ABOUT THIS GAME -</h2>
+                <h2>INTRODUCTION</h2>
                 <h2 class="additional-info">Hamachi the Psychotic Killer is a platformer game where you can play as the bad guy.</h2>
                 <h2 class="more-info">Warlocks have summoned Demon Queen Deity in their pursuit of domination over Earth.</h2>
                 <h2 class="more-info2">Possessed by the Demon, Hamachi is influenced to exterminate all life with an axe in hand.</h2>
