@@ -37,7 +37,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #222222; /* Changed to dark gray */
+            background-color: #222222;
             padding: 20px 0;
             display: flex;
             justify-content: center;
@@ -46,14 +46,14 @@
         }
 
         .navbar a {
-            color: #fff; /* Changed to white for better contrast */
+            color: #fff;
             text-decoration: none;
             font-size: 30px;
             text-shadow: 1px 1px 2px black;
         }
 
         .navbar a:hover {
-            color: #ddd; /* Light gray for hover effect */
+            color: #ddd;
         }
 
         section {
@@ -70,7 +70,7 @@
         .title-section {
             background-color: #808080;
             padding: 0;
-            min-height: 0; /* Overrides min-height: 600px to match content height */
+            min-height: 0;
         }
 
         .about-section {
@@ -78,6 +78,7 @@
             color: #fff;
             height: auto;
             padding: 0;
+            min-height: 0; /* Added to match image height */
         }
 
         .roadblock-section {
@@ -85,12 +86,21 @@
             color: #fff;
             height: auto;
             padding: 0;
-            min-height: 0; /* Overrides min-height: 600px to match image height */
+            min-height: 0;
+        }
+
+        .characters-section {
+            background-color: #00008b;
+            color: #fff;
+            height: auto;
+            padding: 0;
+            min-height: 0; /* Ensures height matches image */
         }
 
         .title-section img,
         .about-section img,
-        .roadblock-section img {
+        .roadblock-section img,
+        .characters-section img {
             width: 100vw;
             height: auto;
             display: block;
@@ -165,6 +175,10 @@
 
             <section class="about-section">
                 <img src="https://gavinoriley.github.io/assets/5INTRODUCTION.png" alt="In-game screenshot for About section">
+            </section>
+
+            <section class="characters-section">
+                <img src="https://gavinoriley.github.io/assets/3CHARACTERS.png" alt="Characters from Hamachi the Psychotic Killer">
             </section>
         </main>
 
